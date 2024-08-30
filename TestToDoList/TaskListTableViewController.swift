@@ -7,11 +7,11 @@
 
 import UIKit
 
-class TaskListTableViewController: UIViewController {
+class TaskListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
 
 
