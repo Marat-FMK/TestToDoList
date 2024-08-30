@@ -56,19 +56,19 @@
                             <barButtonItem systemItem="add" id="Gnl-hO-5R2">
                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <connections>
-                                    <action selector="addNewTask:" destination="kov-d5-xVj" id="mbV-Gf-aKY"/>
+                                    <action selector="addNewTask:" destination="kov-d5-xVj" id="dN2-7i-Mcp"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem image="chart.bar.doc.horizontal" catalog="system" id="XMJ-iT-HlW">
                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <connections>
-                                    <action selector="sortTaskListByStatus:" destination="kov-d5-xVj" id="cSL-8L-b4b"/>
+                                    <action selector="sortTasListByStatus:" destination="kov-d5-xVj" id="H8d-Mx-Xkl"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <outlet property="sortBarButton" destination="XMJ-iT-HlW" id="b9R-T6-ZIY"/>
+                        <outlet property="sortBarButton" destination="Gnl-hO-5R2" id="utr-ht-84E"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zIQ-8Y-ifR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -136,7 +136,7 @@
                     </view>
                     <connections>
                         <outlet property="dateLabel" destination="5v9-Zu-JYI" id="tzq-8g-HBi"/>
-                        <outlet property="noteLabel" destination="kEX-Bj-bLI" id="h13-XI-Hem"/>
+                        <outlet property="noteLabel" destination="kEX-Bj-bLI" id="PcN-b4-MAb"/>
                         <outlet property="statusLabel" destination="GSf-Kk-evH" id="kCS-Y3-Eyt"/>
                         <outlet property="titleLabel" destination="3fU-dH-D3p" id="ebv-T5-shu"/>
                     </connections>
