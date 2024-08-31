@@ -14,6 +14,8 @@ class TaskInfoViewController: UIViewController {
     @IBOutlet weak var dataLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     
+    var task: Task!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
