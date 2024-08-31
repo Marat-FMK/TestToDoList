@@ -71,7 +71,7 @@ class TaskListTableViewController: UITableViewController {
         
         let task = taskList[indexPath.row]
         
-        cell.configure(task: task)
+        cell.configure(position: indexPath.row + 1, task: task)
         
         return cell
     }
