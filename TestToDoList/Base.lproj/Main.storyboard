@@ -52,6 +52,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="ToDoList" id="VHK-ub-hsR">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="folder.badge.minus.fill" catalog="system" id="MeE-v6-GtF">
+                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <action selector="deleteAllTasks:" destination="kov-d5-xVj" id="pAt-dh-2S6"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="Gnl-hO-5R2">
                                 <color key="tintColor" systemColor="systemOrangeColor"/>
@@ -169,9 +175,13 @@
     </scenes>
     <resources>
         <image name="chart.bar.doc.horizontal" catalog="system" width="115" height="128"/>
+        <image name="folder.badge.minus.fill" catalog="system" width="128" height="93"/>
         <image name="list.bullet.clipboard" catalog="system" width="98" height="128"/>
         <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
