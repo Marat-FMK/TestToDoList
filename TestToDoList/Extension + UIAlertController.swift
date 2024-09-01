@@ -10,7 +10,7 @@ import UIKit
 extension UIAlertController {
     
     static func createAlertController(withTitle title: String) -> UIAlertController {
-        UIAlertController(title: title, message: " What do you want to do", preferredStyle: .alert)
+        UIAlertController(title: title, message: " What do you want to do ?", preferredStyle: .alert)
     }
     
     func action(task: Task?, completion: @escaping (String,String) -> Void) {
