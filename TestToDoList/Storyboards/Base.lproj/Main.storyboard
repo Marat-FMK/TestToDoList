@@ -41,7 +41,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.62745098039215685" green="0.62745098039215685" blue="1" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="displayP3"/>
-                                <color key="tintColor" red="0.62745098040000002" green="0.62745098040000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="0.26244977965086247" green="0.58297151929200297" blue="0.56659026483524955" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <segue destination="Tvc-r6-5DB" kind="presentation" identifier="taskInfo" id="c8E-bL-5Gd"/>
                                 </connections>
@@ -218,10 +218,10 @@
         <image name="folder.badge.minus" catalog="system" width="128" height="93"/>
         <image name="list.bullet.clipboard" catalog="system" width="98" height="128"/>
         <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
