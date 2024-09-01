@@ -22,6 +22,8 @@ class TaskListTableViewController: UITableViewController {
     @IBAction func addNewTask(_ sender: UIBarButtonItem) {
         showAlert()
        }
+    @IBAction func deleteAllTasks(_ sender: Any) {
+    }
     
     @IBAction func sortTasListByStatus(_ sender: UIBarButtonItem) {
         let completedTasks: [Task] = taskList.filter { $0.isDone }
