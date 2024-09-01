@@ -78,8 +78,30 @@ class TaskListTableViewController: UITableViewController {
         }
     }
     
+    private func showAlert(task: Task? = nil, completion: (() -> Void)? = nil) {
+        let title = task == nil ? "Новая заметка" : "Редактировать заметку"
+        let alert = UIAlertController.createAlertController(withTitle: title)
+        
+        alert.action(task: task) { taskName, taskNote in
+            if let task = task, let completion = completion {
+                StorageManager.shared.edit(task, newName: taskName, newNoteValue: taskNote)
+                completion()
+            } else {
+                self.save(taskName: taskName, taskNote: taskNote)
+            }
+        }
+        present(alert, animated: true)
+    }
+    
+    //MARK: - Table View
+    
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-      "Заметки"
+        "Заметки"
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard let header = view as? UITableViewHeaderFooterView else { return }
+        header.tintColor = UIColor(_colorLiteralRed: 160/255, green: 160/255, blue: 255/255, alpha: 1)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -139,19 +161,5 @@ class TaskListTableViewController: UITableViewController {
         return UISwipeActionsConfiguration(actions: [doneAction,editAction,deleteAction])
     }
     
-    private func showAlert(task: Task? = nil, completion: (() -> Void)? = nil) {
-        let title = task == nil ? "Новая заметка" : "Редактировать заметку"
-        let alert = UIAlertController.createAlertController(withTitle: title)
-        
-        alert.action(task: task) { taskName, taskNote in
-            if let task = task, let completion = completion {
-                StorageManager.shared.edit(task, newName: taskName, newNoteValue: taskNote)
-                completion()
-            } else {
-                self.save(taskName: taskName, taskNote: taskNote)
-            }
-        }
-        present(alert, animated: true)
-    }
 }
 
