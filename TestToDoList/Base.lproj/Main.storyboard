@@ -52,7 +52,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="ToDoList" id="VHK-ub-hsR">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="folder.badge.minus.fill" catalog="system" id="MeE-v6-GtF">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="folder.badge.minus" catalog="system" id="MeE-v6-GtF">
                             <color key="tintColor" systemColor="systemRedColor"/>
                             <connections>
                                 <action selector="deleteAllTasks:" destination="kov-d5-xVj" id="pAt-dh-2S6"/>
@@ -68,7 +68,7 @@
                             <barButtonItem image="chart.bar.doc.horizontal" catalog="system" id="XMJ-iT-HlW">
                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <connections>
-                                    <action selector="sortTasListByStatus:" destination="kov-d5-xVj" id="H8d-Mx-Xkl"/>
+                                    <action selector="sortTaskListByStatus:" destination="kov-d5-xVj" id="H8d-Mx-Xkl"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -159,6 +159,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ubi-mt-RxY">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.62745098039215685" green="0.62745098039215685" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
@@ -175,7 +176,7 @@
     </scenes>
     <resources>
         <image name="chart.bar.doc.horizontal" catalog="system" width="115" height="128"/>
-        <image name="folder.badge.minus.fill" catalog="system" width="128" height="93"/>
+        <image name="folder.badge.minus" catalog="system" width="128" height="93"/>
         <image name="list.bullet.clipboard" catalog="system" width="98" height="128"/>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

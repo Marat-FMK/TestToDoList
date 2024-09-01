@@ -6,18 +6,20 @@
 //
 
 import UIKit
+import CoreData
 
 class TaskListTableViewController: UITableViewController {
 
     @IBOutlet weak var sortBarButton: UIBarButtonItem!
     
     private var taskList: [Task] = []
-    private var sortByStatus = true
-    private var faketasks: [Task] = []
+    private var sortByStatus = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        createTaskList()
+       createTaskList()
+        
+//        UserDefaults.standard.setValue(true, forKey: "firstStart")
     }
     
     @IBAction func addNewTask(_ sender: UIBarButtonItem) {
@@ -25,7 +27,6 @@ class TaskListTableViewController: UITableViewController {
        }
     
     @IBAction func deleteAllTasks(_ sender: Any) {
-        UserDefaults.standard.set(true, forKey: "firstTap")
         for task in taskList {
             StorageManager.shared.delete(task)
         }
@@ -33,25 +34,26 @@ class TaskListTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-    @IBAction func sortTasListByStatus(_ sender: UIBarButtonItem) {
+    @IBAction func sortTaskListByStatus(_ sender: UIBarButtonItem) {
         let completedTasks: [Task] = taskList.filter { $0.isDone }
         let currentTasks: [Task] = taskList.filter { !$0.isDone }
         
-        if sortByStatus {
+        if sortByStatus == 0 {
             taskList = completedTasks + currentTasks
-            sortByStatus.toggle()
+            sortByStatus = 1
         } else {
-            sortByStatus.toggle()
+            sortByStatus = 0
             taskList = currentTasks + completedTasks
         }
         tableView.reloadData()
     }
     
     private func createTaskList() {
-        if UserDefaults.standard.bool(forKey: "firstTap"){
+        if UserDefaults.standard.bool(forKey: "firstStart") {
             fetchData()
         } else {
             DataManager.shared.createFakeTasks { fakeTasks in
+                UserDefaults.standard.setValue(true, forKey: "firstStart")
                 self.taskList += fakeTasks
                 self.tableView.reloadData()
             }
@@ -60,7 +62,6 @@ class TaskListTableViewController: UITableViewController {
     
     private func save(taskName: String, taskNote: String?) {
         StorageManager.shared.save(taskName: taskName, taskNote: taskNote) { task in
-            UserDefaults.standard.setValue(true, forKey: "firstTap")
             self.taskList.append(task)
             let rowIndex = IndexPath(row: taskList.firstIndex(of: task) ?? 0, section: 0)
             self.tableView.insertRows(at: [rowIndex], with: .automatic)
@@ -68,6 +69,7 @@ class TaskListTableViewController: UITableViewController {
     }
     
     private func fetchData() {
+       
         StorageManager.shared.fetchData { result in
             switch result {
             case .success(let tasks):

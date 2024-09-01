@@ -42,12 +42,12 @@ class StorageManager {
         }
     }
     
-    func save(taskName: String, taskNote: String? = nil, completion: (Task) -> Void) {
+    func save(taskName: String, taskNote: String? = nil, status: Bool? = false, completion: (Task) -> Void) {
         let task = Task(context: viewContext)
         task.title = taskName
         task.date = Date()
         task.note = taskNote
-        task.isDone = false
+        task.isDone = status ?? false
         completion(task)
         saveContext()
     }
