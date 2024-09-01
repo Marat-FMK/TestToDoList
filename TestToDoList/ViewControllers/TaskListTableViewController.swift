@@ -47,11 +47,11 @@ class TaskListTableViewController: UITableViewController {
     }
     
     private func createTaskList() {
-        if UserDefaults.standard.bool(forKey: "firstAppLaunch") {
+        if UserDefaults.standard.bool(forKey: "appFirstLaunch") {
             fetchData()
         } else {
             DataManager.shared.createFakeTasks { fakeTasks in
-                UserDefaults.standard.setValue(true, forKey: "firstAppLaunch")
+                UserDefaults.standard.setValue(true, forKey: "appFirstLaunch")
                 self.taskList += fakeTasks
                 self.tableView.reloadData()
             }
@@ -148,7 +148,7 @@ class TaskListTableViewController: UITableViewController {
             isDone(true)
         }
         
-        let doneTitle = task.isDone ? "Редактировать" : "Выполнено"
+        let doneTitle = task.isDone ? "Не выполнено" : "Выполнено"
         let doneAction = UIContextualAction(style: .normal, title: doneTitle) { _, _, isDone in
             StorageManager.shared.done(task: task)
             self.tableView.reloadRows(at: [indexPath], with: .automatic)
@@ -156,7 +156,12 @@ class TaskListTableViewController: UITableViewController {
         }
         
         editAction.backgroundColor = #colorLiteral(red: 0.919551909, green: 0.5554075241, blue: 0.2589886487, alpha: 1)
-        doneAction.backgroundColor = #colorLiteral(red: 0.2186376452, green: 0.6947699785, blue: 0.3461918533, alpha: 1)
+        
+        if doneTitle == "Выполнено" {
+            doneAction.backgroundColor = #colorLiteral(red: 0.2186376452, green: 0.6947699785, blue: 0.3461918533, alpha: 1)
+        } else {
+            doneAction.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        }
         
         return UISwipeActionsConfiguration(actions: [doneAction,editAction,deleteAction])
     }
