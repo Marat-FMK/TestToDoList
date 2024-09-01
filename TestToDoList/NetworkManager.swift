@@ -25,7 +25,7 @@ class NetworkManager {
                 let fakeTasks = try JSONDecoder().decode(FakeTasks.self, from: data)
                 DispatchQueue.main.async {
                     completion(fakeTasks)
-                    print("Completion ok")
+                    print("Completion network")
                 }
             } catch let error {
                 print(error.localizedDescription)

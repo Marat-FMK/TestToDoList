@@ -12,18 +12,19 @@ class DataManager {
     static let shared = DataManager()
     private init() {}
     
-    var tasks: [Task] = []
-    
     func createFakeTasks(completion: @escaping([Task]) -> Void) {
         var taskList: [Task] = []
         NetworkManager.shared.fetchData { data in
             for fakeTask in data.todos {
-                StorageManager.shared.save(taskName: fakeTask.todo) { task in
-                    taskList.append(task)
-                }
+                StorageManager.shared.save(
+                    taskName: fakeTask.todo,
+                    status: fakeTask.completed) { task in
+                        taskList.append(task)
+                    }
             }
-            UserDefaults.standard.setValue(true, forKey: "firstTap")
             completion(taskList)
+            print("completion dataManager")
         }
     }
+    
 }
