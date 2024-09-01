@@ -20,6 +20,7 @@
 		6CC03BCA2C832EBC00CE3663 /* Extension + UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC03BC92C832EBC00CE3663 /* Extension + UITableViewCell.swift */; };
 		6CC03BCC2C83335300CE3663 /* FakeTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC03BCB2C83335300CE3663 /* FakeTasks.swift */; };
 		6CC03BCF2C8333EA00CE3663 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC03BCE2C8333EA00CE3663 /* NetworkManager.swift */; };
+		6CC03BD12C84708C00CE3663 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC03BD02C84708C00CE3663 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		6CC03BC92C832EBC00CE3663 /* Extension + UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UITableViewCell.swift"; sourceTree = "<group>"; };
 		6CC03BCB2C83335300CE3663 /* FakeTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeTasks.swift; sourceTree = "<group>"; };
 		6CC03BCE2C8333EA00CE3663 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		6CC03BD02C84708C00CE3663 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				6CC03BCE2C8333EA00CE3663 /* NetworkManager.swift */,
 				6CC03BCB2C83335300CE3663 /* FakeTasks.swift */,
 				6C358DFE2C820DE700953E7E /* Main.storyboard */,
+				6CC03BD02C84708C00CE3663 /* DataManager.swift */,
 				6C358E042C820DE800953E7E /* Assets.xcassets */,
 				6C358E062C820DE800953E7E /* LaunchScreen.storyboard */,
 				6C358E092C820DE800953E7E /* Info.plist */,
@@ -167,6 +170,7 @@
 				6CC03BCC2C83335300CE3663 /* FakeTasks.swift in Sources */,
 				6C358DFB2C820DE700953E7E /* SceneDelegate.swift in Sources */,
 				6CC03BC82C832E6E00CE3663 /* Extension + UIAlertController.swift in Sources */,
+				6CC03BD12C84708C00CE3663 /* DataManager.swift in Sources */,
 				6C358E032C820DE700953E7E /* TestToDoList.xcdatamodeld in Sources */,
 				6CC03BCA2C832EBC00CE3663 /* Extension + UITableViewCell.swift in Sources */,
 			);

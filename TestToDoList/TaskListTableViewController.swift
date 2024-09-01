@@ -13,16 +13,24 @@ class TaskListTableViewController: UITableViewController {
     
     private var taskList: [Task] = []
     private var sortByStatus = true
-    
+    private var faketasks: [Task] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchData()
+        createTaskList()
     }
+    
     @IBAction func addNewTask(_ sender: UIBarButtonItem) {
         showAlert()
        }
+    
     @IBAction func deleteAllTasks(_ sender: Any) {
+        UserDefaults.standard.set(true, forKey: "firstTap")
+        for task in taskList {
+            StorageManager.shared.delete(task)
+        }
+        self.taskList.removeAll()
+        self.tableView.reloadData()
     }
     
     @IBAction func sortTasListByStatus(_ sender: UIBarButtonItem) {
@@ -39,7 +47,16 @@ class TaskListTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
-  
+    private func createTaskList() {
+        if UserDefaults.standard.bool(forKey: "firstTap"){
+            fetchData()
+        } else {
+            DataManager.shared.createFakeTasks { fakeTasks in
+                self.taskList += fakeTasks
+                self.tableView.reloadData()
+            }
+        }
+    }
     
     private func save(taskName: String, taskNote: String?) {
         StorageManager.shared.save(taskName: taskName, taskNote: taskNote) { task in
@@ -60,6 +77,7 @@ class TaskListTableViewController: UITableViewController {
             }
         }
     }
+    
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
       "Tasks"
     }
@@ -77,8 +95,6 @@ class TaskListTableViewController: UITableViewController {
         
         return cell
     }
-    
-    
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -123,15 +139,13 @@ class TaskListTableViewController: UITableViewController {
         return UISwipeActionsConfiguration(actions: [doneAction,editAction,deleteAction])
     }
     
-    
-    
     private func showAlert(task: Task? = nil, completion: (() -> Void)? = nil) {
         let title = task == nil ? "New task" : "Update task"
         let alert = UIAlertController.createAlertController(withTitle: title)
         
         alert.action(task: task) { taskName, taskNote in
             if let task = task, let completion = completion {
-                StorageManager.shared.edit(task, newName: taskName, newNoteValue: taskNote) ///////
+                StorageManager.shared.edit(task, newName: taskName, newNoteValue: taskNote)
                 completion()
             } else {
                 self.save(taskName: taskName, taskNote: taskNote)
@@ -139,7 +153,5 @@ class TaskListTableViewController: UITableViewController {
         }
         present(alert, animated: true)
     }
-    
-    
 }
 

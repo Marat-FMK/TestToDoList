@@ -68,11 +68,6 @@ class StorageManager {
         saveContext()
     }
     
-//    func undone(task: Task) {
-//        task.isDone = false
-//        saveContext()
-//    }
-    
     func saveContext() {
         if viewContext.hasChanges {
             do {

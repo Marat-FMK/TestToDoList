@@ -14,18 +14,18 @@ class NetworkManager {
     
     func fetchData(_ completion: @escaping(FakeTasks) -> Void) {
         guard let url = URL(string: "https://dummyjson.com/todos") else {  
-            print("Invalid Url");return }
+            print("Invalid URL");return }
         
         URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data else {
-                print(" No date ")
+                print("No data")
                 return
             }
             do {
                 let fakeTasks = try JSONDecoder().decode(FakeTasks.self, from: data)
                 DispatchQueue.main.async {
                     completion(fakeTasks)
-                    print("Complet ok")
+                    print("Completion ok")
                 }
             } catch let error {
                 print(error.localizedDescription)
