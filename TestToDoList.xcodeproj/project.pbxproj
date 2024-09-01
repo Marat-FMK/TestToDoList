@@ -72,23 +72,63 @@
 		6C358DF72C820DE700953E7E /* TestToDoList */ = {
 			isa = PBXGroup;
 			children = (
-				6C358DF82C820DE700953E7E /* AppDelegate.swift */,
-				6C358DFA2C820DE700953E7E /* SceneDelegate.swift */,
-				6C358DFC2C820DE700953E7E /* TaskListTableViewController.swift */,
-				6C358E0F2C8212FE00953E7E /* TaskInfoViewController.swift */,
-				6CC03BC72C832E6E00CE3663 /* Extension + UIAlertController.swift */,
-				6CC03BC92C832EBC00CE3663 /* Extension + UITableViewCell.swift */,
-				6C358E152C8225D300953E7E /* StorageManager.swift */,
-				6CC03BCE2C8333EA00CE3663 /* NetworkManager.swift */,
-				6CC03BCB2C83335300CE3663 /* FakeTasks.swift */,
-				6C358DFE2C820DE700953E7E /* Main.storyboard */,
-				6CC03BD02C84708C00CE3663 /* DataManager.swift */,
+				6C823CA32C84BCFB003504E0 /* Storyboards */,
+				6C823CA12C84BC9E003504E0 /* SupportingFiles */,
+				6C823CA52C84BD3B003504E0 /* ViewControllers */,
+				6C823CA22C84BCCF003504E0 /* Services */,
+				6C823CA02C84BC78003504E0 /* Model */,
 				6C358E042C820DE800953E7E /* Assets.xcassets */,
-				6C358E062C820DE800953E7E /* LaunchScreen.storyboard */,
 				6C358E092C820DE800953E7E /* Info.plist */,
 				6C358E012C820DE700953E7E /* TestToDoList.xcdatamodeld */,
 			);
 			path = TestToDoList;
+			sourceTree = "<group>";
+		};
+		6C823CA02C84BC78003504E0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6CC03BCB2C83335300CE3663 /* FakeTasks.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6C823CA12C84BC9E003504E0 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				6C358DF82C820DE700953E7E /* AppDelegate.swift */,
+				6C358DFA2C820DE700953E7E /* SceneDelegate.swift */,
+			);
+			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		6C823CA22C84BCCF003504E0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6CC03BD02C84708C00CE3663 /* DataManager.swift */,
+				6C358E152C8225D300953E7E /* StorageManager.swift */,
+				6CC03BCE2C8333EA00CE3663 /* NetworkManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		6C823CA32C84BCFB003504E0 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				6C358DFE2C820DE700953E7E /* Main.storyboard */,
+				6C358E062C820DE800953E7E /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		6C823CA52C84BD3B003504E0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6C358E0F2C8212FE00953E7E /* TaskInfoViewController.swift */,
+				6C358DFC2C820DE700953E7E /* TaskListTableViewController.swift */,
+				6CC03BC72C832E6E00CE3663 /* Extension + UIAlertController.swift */,
+				6CC03BC92C832EBC00CE3663 /* Extension + UITableViewCell.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
