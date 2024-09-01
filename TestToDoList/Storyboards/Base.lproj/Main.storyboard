@@ -53,20 +53,20 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="To Do List" id="VHK-ub-hsR">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="folder.badge.minus" catalog="system" id="MeE-v6-GtF">
-                            <color key="tintColor" systemColor="systemRedColor"/>
+                            <color key="tintColor" systemColor="systemPinkColor"/>
                             <connections>
                                 <action selector="deleteAllTasks:" destination="kov-d5-xVj" id="pAt-dh-2S6"/>
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="Gnl-hO-5R2">
-                                <color key="tintColor" systemColor="systemOrangeColor"/>
+                                <color key="tintColor" systemColor="systemGray6Color"/>
                                 <connections>
                                     <action selector="addNewTask:" destination="kov-d5-xVj" id="dN2-7i-Mcp"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem image="chart.bar.doc.horizontal" catalog="system" id="XMJ-iT-HlW">
-                                <color key="tintColor" systemColor="systemOrangeColor"/>
+                                <color key="tintColor" systemColor="systemGray6Color"/>
                                 <connections>
                                     <action selector="sortTaskListByStatus:" destination="kov-d5-xVj" id="H8d-Mx-Xkl"/>
                                 </connections>
@@ -178,11 +178,11 @@
         <image name="chart.bar.doc.horizontal" catalog="system" width="115" height="128"/>
         <image name="folder.badge.minus" catalog="system" width="128" height="93"/>
         <image name="list.bullet.clipboard" catalog="system" width="98" height="128"/>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

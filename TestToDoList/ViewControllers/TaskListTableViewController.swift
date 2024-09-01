@@ -18,8 +18,6 @@ class TaskListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        createTaskList()
-        
-//        UserDefaults.standard.setValue(true, forKey: "firstStart")
     }
     
     @IBAction func addNewTask(_ sender: UIBarButtonItem) {
