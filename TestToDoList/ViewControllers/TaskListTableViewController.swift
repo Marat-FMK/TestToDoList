@@ -47,11 +47,11 @@ class TaskListTableViewController: UITableViewController {
     }
     
     private func createTaskList() {
-        if UserDefaults.standard.bool(forKey: "firstLaunch") {
+        if UserDefaults.standard.bool(forKey: "firstAppLaunch") {
             fetchData()
         } else {
             DataManager.shared.createFakeTasks { fakeTasks in
-                UserDefaults.standard.setValue(true, forKey: "firstLaunch")
+                UserDefaults.standard.setValue(true, forKey: "firstAppLaunch")
                 self.taskList += fakeTasks
                 self.tableView.reloadData()
             }
