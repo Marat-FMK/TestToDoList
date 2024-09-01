@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--ToDoList-->
+        <!--To Do List-->
         <scene sceneID="aap-A5-n60">
             <objects>
                 <tableViewController id="kov-d5-xVj" customClass="TaskListTableViewController" customModule="TestToDoList" customModuleProvider="target" sceneMemberID="viewController">
@@ -51,7 +51,7 @@
                             <outlet property="delegate" destination="kov-d5-xVj" id="aW5-Ec-63B"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="ToDoList" id="VHK-ub-hsR">
+                    <navigationItem key="navigationItem" title="To Do List" id="VHK-ub-hsR">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="folder.badge.minus" catalog="system" id="MeE-v6-GtF">
                             <color key="tintColor" systemColor="systemRedColor"/>
                             <connections>

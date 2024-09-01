@@ -10,11 +10,11 @@ import UIKit
 extension UIAlertController {
     
     static func createAlertController(withTitle title: String) -> UIAlertController {
-        UIAlertController(title: title, message: " What do you want to do ?", preferredStyle: .alert)
+        UIAlertController(title: title, message: "О чем Вам напомнить ?", preferredStyle: .alert)
     }
     
     func action(task: Task?, completion: @escaping (String,String) -> Void) {
-        let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
+        let saveAction = UIAlertAction(title: "Сохранить", style: .default) { _ in
             
             guard let newValue = self.textFields?.first?.text else { return }
             guard !newValue.isEmpty else { return }
@@ -24,16 +24,16 @@ extension UIAlertController {
             completion(newValue, newNote)
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive)
+        let cancelAction = UIAlertAction(title: "Отмена", style: .destructive)
         
         addAction(saveAction)
         addAction(cancelAction)
         addTextField { textField in
-            textField.placeholder = "Task"
+            textField.placeholder = "Заметка"
             textField.text = task?.title
         }
         addTextField {textField in
-            textField.placeholder = "Note"
+            textField.placeholder = "Описание"
             textField.text = task?.note
         }
     }

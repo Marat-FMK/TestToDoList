@@ -81,7 +81,7 @@ class TaskListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-      "Tasks"
+      "Заметки"
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -115,20 +115,20 @@ class TaskListTableViewController: UITableViewController {
         
         let task = taskList[indexPath.row]
         
-        let deleteAction = UIContextualAction(style: .destructive, title: "DELETE") { _, _, _ in
+        let deleteAction = UIContextualAction(style: .destructive, title: "Удалить") { _, _, _ in
             StorageManager.shared.delete(task)
             self.taskList.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
         }
         
-        let editAction = UIContextualAction(style: .normal, title: "Edit") { _, _, isDone in
+        let editAction = UIContextualAction(style: .normal, title: "Редактировать") { _, _, isDone in
             self.showAlert(task: task) {
                 self.tableView.reloadRows(at: [indexPath], with: .automatic)
             }
             isDone(true)
         }
         
-        let doneTitle = task.isDone ? "Undone" : "Done"
+        let doneTitle = task.isDone ? "Редактировать" : "Выполнено"
         let doneAction = UIContextualAction(style: .normal, title: doneTitle) { _, _, isDone in
             StorageManager.shared.done(task: task)
             self.tableView.reloadRows(at: [indexPath], with: .automatic)
@@ -142,7 +142,7 @@ class TaskListTableViewController: UITableViewController {
     }
     
     private func showAlert(task: Task? = nil, completion: (() -> Void)? = nil) {
-        let title = task == nil ? "New task" : "Update task"
+        let title = task == nil ? "Новая заметка" : "Редактировать заметку"
         let alert = UIAlertController.createAlertController(withTitle: title)
         
         alert.action(task: task) { taskName, taskNote in

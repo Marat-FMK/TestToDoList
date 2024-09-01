@@ -25,7 +25,7 @@ class TaskInfoViewController: UIViewController {
         titleLabel.text = task.title
         noteLabel.text = task.note
         dateLabel.text = task.date?.formatted()
-        statusLabel.text = task.isDone ? "Completed" : "Current"
+        statusLabel.text = task.isDone ? "Выполненные" : "Текущие"
     }
 
 }
